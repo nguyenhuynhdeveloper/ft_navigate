@@ -1,4 +1,4 @@
-# demo_navigate
+# demo_ft_navigate
 
 A new Flutter project.
 
@@ -14,8 +14,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-
-
 
 echo "# demo_ft_navigate" >> README.md
 git init
