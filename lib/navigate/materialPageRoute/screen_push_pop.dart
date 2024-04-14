@@ -1,7 +1,9 @@
-import 'package:demo_ft_widget/navigate/materialPageRoute/app_router.dart';
-import 'package:demo_ft_widget/navigate/materialPageRoute/push_pop.dart';
 import 'package:flutter/material.dart';
 
+import 'package:demo_ft_navigate/navigate/materialPageRoute/app_router.dart';
+import 'package:demo_ft_navigate/navigate/materialPageRoute/push_pop.dart';
+
+// Màn hình Screen1 : có 1 Contructor nhận 1 String
 class Screen1 extends StatefulWidget {
   final String? argumentRoute;
   const Screen1({Key? key, this.argumentRoute}) : super(key: key);
@@ -23,8 +25,8 @@ class _Screen1State extends State<Screen1> {
         // widget căn giữa ra màn hình (hoặc giữa thằng widget cha của nó)
         child: Column(
           //Widget mà các children bên trong xếp theo hàng dọc
-          mainAxisAlignment: MainAxisAlignment
-              .spaceEvenly, // Column Widget  : mainAxisAlignment  là trục dọc
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // Column Widget  : mainAxisAlignment  là trục dọc
           children: [
             SizedBox(
               width: 150,
@@ -40,7 +42,7 @@ class _Screen1State extends State<Screen1> {
                 AppRouter.push(const HomePage());
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.amber,
+                backgroundColor: Colors.amber,
                 padding: const EdgeInsets.all(16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(32.0),

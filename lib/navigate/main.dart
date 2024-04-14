@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
       ),
       // home: const SecondPage(),
 
-      routes:
-          routes, // Khai báo tất cả tuyến đường màn hình mà app có thể chạy qua
-      initialRoute:
-          '/MyHomePage', //Khai báo tuyến đường đầu tiên mà chạy qua---> màn hình đầu tiên được hiển thị
+      routes: routes,
+      // Khai báo tất cả tuyến đường màn hình mà app có thể chạy qua
+      initialRoute: '/MyHomePage',
+      //Khai báo tuyến đường đầu tiên mà chạy qua---> màn hình đầu tiên được hiển thị
     );
   }
 }

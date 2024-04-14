@@ -1,28 +1,9 @@
-// Cách sử dụng MaterialPageRoute
+import 'package:demo_ft_navigate/navigate/pushNamed/screen_pushNamed.dart';
+import 'package:demo_ft_navigate/navigate/materialPageRoute/app_router.dart';
 
-import 'package:demo_ft_widget/navigate/materialPageRoute/app_router.dart';
-import 'package:demo_ft_widget/navigate/materialPageRoute/screen_push_pop.dart';
 import 'package:flutter/material.dart';
 
-class PushPop extends StatelessWidget {
-  const PushPop({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    //  final navigatorKey1 = AppRouter();
-    return MaterialApp(
-        // Đây chính là sử dụng GlobalKeys
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            // fontFamily: Fonts.SFPro
-            // fontFamily: Fonts.regular
-            ),
-        navigatorKey: AppRouter
-            .navigatorKey, // Cách sử dụng navigatorKey : thay thế cho context
-        home: HomePage());
-  }
-}
-
+// Màn hình HomePage
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -42,8 +23,8 @@ class _HomePageState extends State<HomePage> {
         // widget căn giữa ra màn hình (hoặc giữa thằng widget cha của nó)
         child: Column(
           //Widget mà các children bên trong xếp theo hàng dọc
-          mainAxisAlignment: MainAxisAlignment
-              .spaceEvenly, // Column Widget  : mainAxisAlignment  là trục dọc
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // Column Widget  : mainAxisAlignment  là trục dọc
           children: [
             SizedBox(
               width: 150,
@@ -53,20 +34,20 @@ class _HomePageState extends State<HomePage> {
             ElevatedButton(
               onPressed: () {
                 //--------CÁCH SỬ DỤNG CONTEXT-----------------
-                //Cách 1 :Đè lên trên
+                //Cách 1 : push: Đè lên trên
                 Navigator.of(context).push(
                   MaterialPageRoute(
                       builder: (context) => const Screen1(
                             argumentRoute: "argumentRoute",
-                          )), // Cách để có thể truyền tham số sang màn hình tiếp theo : sử dụng constructor
+                          )),
+                  // Cách để có thể truyền tham số sang màn hình tiếp theo : sử dụng constructor
                 );
 
                 // Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) {
                 //   return Screen1();
                 // }));
 
-                // // Cách 2 thay thế màn hiện tại
-
+                // // Cách 2: pushReplacement:  thay thế màn hiện tại
                 //   Navigator.of(context).pushReplacement(
                 // MaterialPageRoute(
                 //     builder: (context) => const Screen1( titleArgument:  "TitleArgument",)),
@@ -75,11 +56,12 @@ class _HomePageState extends State<HomePage> {
                 //   Navigator.pushReplacement(context, MaterialPageRoute(builder: (BuildContext context) {
                 //   return Screen1();
                 // }));
-                //-----------CÁCH SỬ DỤNG navigatorKey
+
+                //----------- CÁCH SỬ DỤNG navigatorKey : đã tạo 1 file Class khác
                 // AppRouter.push( const Screen1());    //Cách sử dụng NavigatorKey
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.amber,
+                backgroundColor: Colors.amber,
                 padding: const EdgeInsets.all(16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(32.0),

@@ -1,8 +1,9 @@
-import 'package:demo_ft_widget/navigate/pushNamed/pushNamed.dart';
 import 'package:flutter/material.dart';
 
+// import 'package:demo_ft_widget/navigate/pushNamed/pushNamed.dart';
+
 class Screen1 extends StatefulWidget {
-  const Screen1({Key? key}) : super(key: key);
+  const Screen1({Key? key, String? argumentRoute}) : super(key: key);
 
   @override
   State<Screen1> createState() => _Screen1State();
@@ -12,6 +13,8 @@ class _Screen1State extends State<Screen1> {
   String? argumentRoute;
   @override
   Widget build(BuildContext context) {
+
+    // Cách Lấy params truyền từ màn khác sang 
     Map<String, String>? arguments =
         ModalRoute.of(context)?.settings.arguments as Map<String, String>?;
 
@@ -27,8 +30,8 @@ class _Screen1State extends State<Screen1> {
         // widget căn giữa ra màn hình (hoặc giữa thằng widget cha của nó)
         child: Column(
           //Widget mà các children bên trong xếp theo hàng dọc
-          mainAxisAlignment: MainAxisAlignment
-              .spaceEvenly, // Column Widget  : mainAxisAlignment  là trục dọc
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // Column Widget  : mainAxisAlignment  là trục dọc
           children: [
             SizedBox(
               width: 150,
@@ -40,14 +43,14 @@ class _Screen1State extends State<Screen1> {
             ElevatedButton(
               onPressed: () {
                 // // Cách để trở về màn trước
-                Navigator.of(context).pop(false);
+                // Navigator.of(context).pop(false);
                 Navigator.pushNamed(
                   context,
                   "/",
                 );
               },
               style: ElevatedButton.styleFrom(
-                primary: Colors.amber,
+                backgroundColor: Colors.amber,
                 padding: const EdgeInsets.all(16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(32.0),
