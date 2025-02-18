@@ -1,6 +1,5 @@
-package com.example.demo_navigate
+package com.example.demo_ft_navigate
 
 import io.flutter.embedding.android.FlutterActivity
 
-class MainActivity: FlutterActivity() {
-}
+class MainActivity : FlutterActivity()

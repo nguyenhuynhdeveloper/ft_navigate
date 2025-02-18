@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
 }
 
 Map<String, WidgetBuilder> get routes => {
-      "/MyHomePage": (context) => MyHomePage(),
-      "/SecondPage": (context) => SecondPage(),
+      "/MyHomePage": (context) => const MyHomePage(),
+      "/SecondPage": (context) => const SecondPage(),
     };
 
 // Map <String,int> a_Map = {"a" : 2   };

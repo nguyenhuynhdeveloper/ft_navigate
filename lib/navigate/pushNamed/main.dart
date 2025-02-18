@@ -8,8 +8,6 @@ void main() {
   runApp(const PushNamed());
 }
 
-
-
 class PushNamed extends StatelessWidget {
   const PushNamed({Key? key}) : super(key: key);
 
@@ -32,5 +30,5 @@ class PushNamed extends StatelessWidget {
 //Map danh sách các màn hình có thể chuyển qua chuyển lại trong ứng dụng : get routeList => {}
 Map<String, WidgetBuilder> get routesList => {
       "/": (context) => const HomePage(),
-      "/Screen1": (context) => Screen1(),
+      "/Screen1": (context) => const Screen1(),
     };
